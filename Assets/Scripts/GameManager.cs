@@ -28,7 +28,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameTimer();
-        Collectables();
+        // Collectables();
+
+    if (Input.GetKeyDown(KeyCode.R))
+        {
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void GameTimer()
