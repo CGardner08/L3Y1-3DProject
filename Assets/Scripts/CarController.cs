@@ -36,6 +36,11 @@ public class CarController : MonoBehaviour
     private GameObject particleHolder;
 
 
+    [Header("Audio")]
+
+    public AudioSource engineSound;
+    public AudioSource hornSound;
+
     void Start()
     {
         theRB = gameObject.GetComponentInChildren<Rigidbody>(); //grabs the Rigidbody in the Sphere that is a child of the main gameObject.
@@ -53,6 +58,14 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        engineSound.pitch = 1 + (speedInput / 10000);
+
+        if (Input.GetKeyDown("h")) //plays the horn sound
+        {
+            hornSound.Play();
+        }
+
+
 
         speedInput = 0f;
         if (Input.GetAxis("Vertical") > 0) 
