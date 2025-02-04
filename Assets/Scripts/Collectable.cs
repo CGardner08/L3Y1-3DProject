@@ -8,7 +8,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().currentCollectables++;
+            GameObject.Find("GameManager").GetComponent<GameManager>().currentCollectables--;
             Destroy(gameObject);
         }
     }

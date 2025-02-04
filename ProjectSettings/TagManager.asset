@@ -6,6 +6,7 @@ TagManager:
   tags:
   - KillTrigger
   - Checkpoint
+  - Collectables
   layers:
   - Default
   - TransparentFX

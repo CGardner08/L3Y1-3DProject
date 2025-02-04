@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameTimer();
-        // Collectables();
+        Collectables();
 
     if (Input.GetKeyDown(KeyCode.R))
         {
@@ -58,10 +58,5 @@ public class GameManager : MonoBehaviour
     void Collectables()
     {
         collectablesText.text = currentCollectables + " / " + requiredCollectables;
-
-        if (currentCollectables == requiredCollectables)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
     }
 }
