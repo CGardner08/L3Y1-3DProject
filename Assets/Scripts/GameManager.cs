@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,10 +19,17 @@ public class GameManager : MonoBehaviour
     public int currentCollectables;
     public TMP_Text collectablesText;
 
+    [Header("Deliveries")]
+    public TextMeshProUGUI deliveryText;
+    public static int foodDelivered;
+    public int amountOfDeliveries = 2;
+    public int displayAmount; 
+
     // Start is called before the first frame update
     void Start()
     {
         timer = timeLimit;
+        foodDelivered = 0;
     }
 
     // Update is called once per frame
@@ -30,6 +38,13 @@ public class GameManager : MonoBehaviour
         GameTimer();
         Collectables();
 
+        displayAmount = amountOfDeliveries - foodDelivered;
+        deliveryText.text = displayAmount.ToString() + "/"+amountOfDeliveries                                   ;
+
+    if (foodDelivered == amountOfDeliveries)
+    {
+        //Load win scene
+    }
     if (Input.GetKeyDown(KeyCode.R))
         {
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -58,5 +73,9 @@ public class GameManager : MonoBehaviour
     void Collectables()
     {
         collectablesText.text = currentCollectables + " / " + requiredCollectables;
+
+        
+       
+
     }
 }

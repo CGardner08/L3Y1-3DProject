@@ -41,6 +41,10 @@ public class CarController : MonoBehaviour
     public AudioSource engineSound;
     public AudioSource hornSound;
 
+    [Header("Delivery")]
+    public bool hasFood = true;
+
+
     void Start()
     {
         theRB = gameObject.GetComponentInChildren<Rigidbody>(); //grabs the Rigidbody in the Sphere that is a child of the main gameObject.
