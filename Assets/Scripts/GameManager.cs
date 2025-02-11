@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     if (foodDelivered == amountOfDeliveries)
     {
-        //Load win scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     if (Input.GetKeyDown(KeyCode.R))
         {
